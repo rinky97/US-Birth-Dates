@@ -1,0 +1,19 @@
+f = open("births.csv","r")
+text = f.read()
+lines_list = text.split('\n')
+lines_list
+new_text = lines_list[1:len(lines_list)]
+new_text
+for each in new_text:
+    strr= each.split(",")
+    print(strr)
+    
+    birth_dict = {}
+for each in new_text:
+    strr= each.split(",")
+    day_of_week = strr[3]
+    births = int(strr[4])
+    if day_of_week in birth_dict:
+        birth_dict[day_of_week] += births
+    else:
+        birth_dict[day_of_week] = births
